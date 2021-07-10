@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table>
+	    <thead>
+	        <tr>
+	            <th> Tsn </th>
+	            <th> Unit </th>
+	            <th> Common </th>
+	            <th> Rank </th>	            
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr th:each="snake,iterator : ${listSnake}">
+				<td><span th:text="${iterator.index}"></span></td>	        
+	            <td><span th:text="${snake.tsn}"></span></td>
+	            <td><span th:text="${snake.unit_name}"></span></td>
+	            <td><span th:text="${snake.common_name}"></span></td>
+	            <td><span th:text="${snake.rank_name}"></span></td>
+	        </tr>
+	    </tbody>
+	</table>
+
+</body>
+</html>
