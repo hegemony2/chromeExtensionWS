@@ -8,6 +8,8 @@
 	<table>
 	    <thead>
 	        <tr>
+				<th> # </th>	        
+				<th> #img </th>				
 	            <th> Tsn </th>
 	            <th> Unit </th>
 	            <th> Common </th>
@@ -16,7 +18,8 @@
 	    </thead>
 	    <tbody>
 	        <tr th:each="snake,iterator : ${listSnake}">
-				<td><span th:text="${iterator.index}"></span></td>	        
+				<td align="right"><span th:text="${iterator.index}"></span></td>
+				<td align="right"><span th:text="${snake.images}"></span></td>					        
 	            <td><span th:text="${snake.tsn}"></span></td>
  	            <td><a th:href="${snake.link}" target="_blank"><span th:text="${snake.unit_name}"></span></a></td>
 	            <td><span th:text="${snake.common_name}"></span></td>

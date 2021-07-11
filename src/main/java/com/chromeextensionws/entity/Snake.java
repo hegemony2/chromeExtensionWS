@@ -34,6 +34,8 @@ public class Snake {
 
 	private Integer children;
 	
+	private Integer images;
+	
 	@Transient
 	private String link;
 
@@ -117,6 +119,14 @@ public class Snake {
 		this.link = link;
 	}
 	
+	public Integer getImages() {
+		return images;
+	}
+
+	public void setImages(Integer images) {
+		this.images = images;
+	}
+
 	@PostLoad
 	private void onLoad() {
 		String un = (this.unit_name==null ? "" : this.unit_name);

@@ -12,6 +12,8 @@ public class AggregationEntity extends EntityWithUUID {
 	private String frameUrl;
 	private String selectionText;
 	private String category;
+	private String imageUrl;
+	private Integer tsn;
 	
 	public String getMediaType() {
 		return mediaType;
@@ -55,12 +57,19 @@ public class AggregationEntity extends EntityWithUUID {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	@Override
-	public String toString() {
-		return "AggregationObj [mediaType=" + mediaType + ", linkUrl=" + linkUrl + ", srcUrl=" + srcUrl + ", pageUrl="
-				+ pageUrl + ", frameUrl=" + frameUrl + ", selectionText=" + selectionText + ", category=" + category
-				+ "]";
+	public String getImageUrl() {
+		return imageUrl;
 	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	public Integer getTsn() {
+		return tsn;
+	}
+	public void setTsn(Integer tsn) {
+		this.tsn = tsn;
+	}
+	
 	
 	
 	
