@@ -2,7 +2,9 @@ package com.chromeextensionws.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
@@ -31,6 +33,9 @@ public class Snake {
 	private String rank_name;
 
 	private Integer children;
+	
+	@Transient
+	private String link;
 
 	public Integer getTsn() {
 		return tsn;
@@ -103,7 +108,20 @@ public class Snake {
 	public void setChildren(Integer children) {
 		this.children = children;
 	}
-	
-	
 
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+	
+	@PostLoad
+	private void onLoad() {
+		String un = (this.unit_name==null ? "" : this.unit_name);
+	    this.link = "https://www.google.com/search?source=lnms&tbm=isch&q=" + un.replace(' ',  '+') + "&tsn=" + tsn;
+		//this.link = "https://www.google.com/search?source=lnms&tbm=isch&q=regina+septemvittata";
+	}
+	
 }
